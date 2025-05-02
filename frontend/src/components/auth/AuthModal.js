@@ -23,7 +23,7 @@ const AuthModal = ({ open, onClose }) => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5011/api/auth/login', { email, password });
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/api/auth/login`, { email, password });
 
             const token = response.data.token;
             const userId = response.data.userId;
@@ -40,7 +40,7 @@ const AuthModal = ({ open, onClose }) => {
     const handleSignup = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5011/api/auth/register', { username, email, password });
+            await axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/api/auth/register`, { username, email, password });
             setTab(0); // Switch to login tab after successful signup
         } catch (err) {
             setError(err.response?.data?.error || 'Signup failed');

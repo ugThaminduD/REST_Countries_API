@@ -18,7 +18,7 @@ const CountryDetails = ({ country, userId }) => {
 
     //     setIsFavorite(!isFavorite);
     //     try {
-    //         await axios.post('http://localhost:5011/api/favorites/add', {
+    //         await axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/api/favorites/add`, {
     //             userId: session.userId,
     //             countryNames: [country.name.common],
     //         });
