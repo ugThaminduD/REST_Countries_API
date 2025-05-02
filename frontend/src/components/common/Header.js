@@ -22,7 +22,7 @@ const Header = () => {
         const fetchUser = async () => {
             if (session) {
                 try {
-                    const response = await axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/api/auth/profile`, {
+                    const response = await axios.get('http://localhost:5011/api/auth/profile', {
                         headers: { Authorization: `Bearer ${session.token}` },
                     });
                     setUser(response.data);

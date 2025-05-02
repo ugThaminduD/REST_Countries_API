@@ -20,7 +20,7 @@ const CountryCard = ({ country, onClick }) => {
             if (!isFavorite) {
                 // add from favorites
                 await axios.post(
-                    `${process.env.REACT_APP_BACKEND_API_URL}/api/favorites/add`,
+                    'http://localhost:5011/api/favorites/add',
                     {
                         userId: session.userId,
                         countryNames: [country.name.common],
@@ -35,7 +35,7 @@ const CountryCard = ({ country, onClick }) => {
             } else {
                 // remove from favorites
                 await axios.post(
-                    `${process.env.REACT_APP_BACKEND_API_URL}/api/favorites/remove`,
+                    'http://localhost:5011/api/favorites/remove',
                     {
                         userId: session.userId,
                         countryNames: [country.name.common],
@@ -58,7 +58,7 @@ const CountryCard = ({ country, onClick }) => {
             if (!session) return;
     
             try {
-                const response = await axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/api/favorites/${session.userId}`, {
+                const response = await axios.get(`http://localhost:5011/api/favorites/${session.userId}`, {
                     headers: { Authorization: `Bearer ${session.token}` },
                 });
                 const favoriteCountries = response.data.countryName;
