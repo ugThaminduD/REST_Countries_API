@@ -20,7 +20,7 @@ const ProfilePage = () => {
                 return;
             }
             try {
-                const response = await axios.get('http://localhost:5011/api/auth/profile', {
+                const response = await axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/api/auth/profile`, {
                     headers: { Authorization: `Bearer ${session.token}` },
                 });
                 setUser(response.data);
@@ -43,7 +43,7 @@ const ProfilePage = () => {
                 return;
             }
             try {
-                const response = await axios.get(`http://localhost:5011/api/favorites/${session.userId}`, {
+                const response = await axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/api/favorites/${session.userId}`, {
                     headers: { Authorization: `Bearer ${session.token}` },
                 });
                 const favoriteCountryNames = response.data.countryName;
