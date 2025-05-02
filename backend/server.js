@@ -9,9 +9,9 @@ dotenv.config();
 const app = express();
 // app.use(cors( ));
 app.use(cors({
-  origin: 'https://rest-countries-apifrontend.vercel.app', // Allow frontend domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-  credentials: true // Allow cookies if needed
+  origin: '*',                                //     https://rest-countries-apifrontend.vercel.app
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  credentials: true                           // Allow cookies if needed
 }));
 app.use(bodyParser.json());
 
