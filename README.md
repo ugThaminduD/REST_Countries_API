@@ -1,3 +1,6 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/mNaxAqQD)
+
+
 # 📌One World Many Nations
 
 ## 🚀 Features
@@ -90,5 +93,27 @@ The application uses the following endpoints from the REST Countries API:
 - **Fetch country flags:**  
   `GET /all?fields=flags,name,region,subregion`  
   Example: `https://restcountries.com/v3.1/all?fields=flags,name,region,subregion`
+
+---
+
+## Challenges Faced
+
+### a. Test Case Failures
+- **Issue:** Several test cases failed during integration, primarily due to mismatched API responses and incorrect mock data.
+- **Resolution:** Updated the test mocks to align with the actual API responses and enhanced error handling in the frontend code.
+
+### b. Session Management
+- **Issue:** Maintaining user sessions across page reloads and API calls was inconsistent.
+- **Resolution:** Implemented token-based authentication using `localStorage` and configured interceptors to attach tokens to outgoing HTTP requests.
+
+### c. API Import Issues
+- **Issue:** Importing API modules occasionally resulted in errors due to incorrect file paths or circular dependencies.
+- **Resolution:** Refactored API utility files, enforced consistent export/import patterns, and adopted absolute imports to reduce dependency issues.
+
+---
+
+## Conclusion
+
+Despite initial setbacks involving test failures, session inconsistencies, and API import errors, these challenges were systematically addressed. The frontend now communicates reliably with the backend APIs, ensuring a smooth and consistent user experience.
 
 ---
