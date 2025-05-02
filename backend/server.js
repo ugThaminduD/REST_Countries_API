@@ -30,7 +30,6 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
 
-
 // Routes
 const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
