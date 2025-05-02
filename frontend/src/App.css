@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F0F4F8; /* Light blue-gray */
+  /* background: linear-gradient(135deg, #c8ccd1, #d6e4f6); */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+
+
+.MuiCard-root {
+  background-color: #FFFFFF; /* White */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+.FilterBar {
+  background-color: #E3F2FD; /* Light blue */
+}
+
+.Pagination {
+  background-color: #F0F4F8; /* Very light gray */
+}
+
+
+
+
+
+
+.App-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.App-footer {
+  /* position: fixed; */
+  margin-top: 20px;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+main {
+  flex: 1;
+  margin-top: 64px; /* Adjust for header height */
+  margin-bottom: 64px; /* Adjust for footer height */
+}
