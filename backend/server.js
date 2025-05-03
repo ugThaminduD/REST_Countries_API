@@ -12,11 +12,21 @@ const app = express();
 
 // CORS Configuration
 // app.use(cors( ));
+const allowedOrigins = [
+  'https://rest-countries-apifrontend-atlaxg1sf-ugthamindus.vercel.app',
+  'https://rest-countries-apifrontend.vercel.app',
+];
+
 app.use(cors({
-  // origin: ['https://rest-countries-apifrontend.vercel.app'],                       //     https://rest-countries-apifrontend.vercel.app
-  origin: 'https://rest-countries-apifrontend-atlaxg1sf-ugthamindus.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-  credentials: true                           // Allow cookies if needed
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
 }));
 
 
