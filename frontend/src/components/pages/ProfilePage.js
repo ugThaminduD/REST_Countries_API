@@ -20,10 +20,12 @@ const ProfilePage = () => {
                 return;
             }
             try {
+                console.log('Token:', session.token);
                 const response = await axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/api/auth/profile`, {
                     headers: { Authorization: `Bearer ${session.token}` },
                 });
                 setUser(response.data);
+                console.log('Authorization Header:', `Bearer ${session.token}`);
 
             } catch (err) {
                 console.error('Error fetching profile:', err);
