@@ -102,7 +102,7 @@ const ProfilePage = () => {
             <Card sx={{ width: '40%', padding: 4, boxShadow: 3 }}>
                 <Avatar
                     alt={user.username}
-                    src="/static/images/avatar/1.jpg"
+                    // src="/static/images/avatar/1.jpg"
                     sx={{ 
                         width: 100, height: 100, margin: '0 auto 16px', bgcolor: '#000000', 
                         fontFamily: 'monospace', fontSize: 75, fontWeight: 'bold',

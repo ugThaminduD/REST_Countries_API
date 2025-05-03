@@ -3,17 +3,25 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require('cors');
 const dotenv = require("dotenv");
+const path = require("path");
 dotenv.config();
 
-
 const app = express();
+
+
+
+// CORS Configuration
 // app.use(cors( ));
 app.use(cors({
   origin: ['https://rest-countries-apifrontend.vercel.app', 'http://localhost:3000'],                       //     https://rest-countries-apifrontend.vercel.app
   methods: ['GET', 'POST', 'PUT', 'DELETE'], 
   credentials: true                           // Allow cookies if needed
 }));
+
+
+// Middleware
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "public")));
 
 
 // MongoDB Connection
