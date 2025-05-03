@@ -1,15 +1,15 @@
 const SESSION_KEY = 'userSession';
 
 export const login = (userData) => {
-    sessionStorage.setItem(SESSION_KEY, JSON.stringify(userData));
+    localStorage.setItem(SESSION_KEY, JSON.stringify(userData));
 };
 
 export const logout = () => {
-    sessionStorage.removeItem(SESSION_KEY);
+    localStorage.removeItem(SESSION_KEY);
 };
 
 export const getSession = () => {
-    const session = sessionStorage.getItem(SESSION_KEY);
+    const session = localStorage.getItem(SESSION_KEY);
     return session ? JSON.parse(session) : null;
 };
 
