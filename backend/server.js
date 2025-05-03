@@ -13,7 +13,7 @@ const app = express();
 // CORS Configuration
 // app.use(cors( ));
 const allowedOrigins = [
-  'https://rest-countries-apifrontend.vercel.app/',
+  'https://rest-countries-apifrontend.vercel.app',
   'http://localhost:3000',
 ];
 
