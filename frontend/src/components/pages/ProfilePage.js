@@ -16,7 +16,8 @@ const ProfilePage = () => {
         const fetchProfile = async () => {
             const session = getSession();
             if (!session) {
-                navigate('/login'); // Redirect to login if not authenticated
+                navigate('/'); 
+                alert('Please log in to add favorites.');
                 return;
             }
             try {
@@ -30,7 +31,7 @@ const ProfilePage = () => {
             } catch (err) {
                 console.error('Error fetching profile:', err);
                 logout();
-                navigate('/login');
+                navigate('/');
             }
         };
         fetchProfile();
@@ -41,7 +42,8 @@ const ProfilePage = () => {
         const fetchFavorites = async () => {
             const session = getSession();
             if (!session) {
-                navigate('/login'); // Redirect to login if not authenticated
+                navigate('/'); 
+                alert('Please log in to add favorites.');
                 return;
             }
             try {

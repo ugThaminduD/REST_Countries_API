@@ -10,6 +10,7 @@
     "@mui/material": "^7.0.2",
     "@testing-library/dom": "^10.4.0",
     "axios": "^1.8.4",
+    "jwt-decode": "^4.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.5.0",
@@ -24,7 +25,6 @@
     "test-CountryPages": "react-scripts test src/components/pages/CountryPage.test.js --transformIgnorePatterns \"node_modules/(?!axios)/\"",
     "test-CountryDetails": "react-scripts test src/components/common/CountryDetails.test.js --transformIgnorePatterns \"node_modules/(?!axios)/\"",
     "test-HomePage": "react-scripts test src/components/pages/HomePage.test.js --transformIgnorePatterns \"node_modules/(?!axios)/\""
-
   },
   "eslintConfig": {
     "extends": [

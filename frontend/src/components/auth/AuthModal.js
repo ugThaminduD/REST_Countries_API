@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Modal, Box, Typography, TextField, Button, Tab, Tabs } from '@mui/material';
 import axios from 'axios';
-import { login } from '../../utils/session';
+import { jwtDecode } from 'jwt-decode';
+import { login, logout } from '../../utils/session';
 import { useNavigate } from 'react-router-dom';
 
 const AuthModal = ({ open, onClose }) => {
@@ -27,6 +28,19 @@ const AuthModal = ({ open, onClose }) => {
 
             const token = response.data.token;
             const userId = response.data.userId;
+
+             // Decode the token and check expiration
+            const decoded = jwtDecode(token);
+            const isExpired = decoded.exp * 1000 < Date.now();
+            console.log('Token expired:', isExpired);
+            if (isExpired) {
+                logout();
+                setError('Session expired. Please log in again.');
+                alert('Session expired. Please log in again.');
+                navigate('/');
+                return;
+            }
+
             login({ token, userId });
             console.log('Login successful:', token);
 
