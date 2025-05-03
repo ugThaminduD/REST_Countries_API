@@ -5,6 +5,7 @@ export const login = (userData) => {
 };
 
 export const logout = () => {
+    console.log('Logout triggered');
     localStorage.removeItem(SESSION_KEY);
 };
 
