@@ -23,7 +23,7 @@ function App() {
       console.log('No session found. Redirecting to login.');
       alert('Please log in to access this page.');
       logout();
-      window.location.href = '/'; 
+      // window.location.href = '/'; 
     } else {
       console.log('Session found:', session);
       const decoded = jwtDecode(session.token);
